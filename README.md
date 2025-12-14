@@ -10,38 +10,32 @@ This project implements an arbitrage detector on the SwissBorg rate API using a 
 
 Let:
 
-- \( C = \{c_0, \dots, c_{n-1}\} \) be the set of currencies  
-- For each ordered pair \((c_i, c_j)\) we have a quoted rate \(r_{ij}\), meaning:  
-  *1 unit of \(c_i\) buys \(r_{ij}\) units of \(c_j\).*
+- `C = {c0, …, c(n-1)}` be the set of currencies  
+- For each ordered pair `(ci, cj)` we have a quoted rate `rij`, meaning:  
+  *1 unit of `ci` buys `rij` units of `cj`.*
 
 We build a **weighted directed graph**:
 
 - **Vertices**: one per currency  
-- **Edges**: for every quoted pair \(c_i \to c_j\) with rate \(r_{ij}\)  
-- **Edge weight**:
-  \[
-  w_{ij} = -\log(r_{ij})
-  \]
+- **Edges**: for every quoted pair `ci -> cj` with rate `rij`  
+- **Edge weight**:  
+  `wij = -log(rij)`
 
 An arbitrage loop is a cycle:
-\[
-c_{i_0} \to c_{i_1} \to \dots \to c_{i_k} \to c_{i_0}
-\]
+
+`ci0 -> ci1 -> … -> cik -> ci0`
+
 such that:
-\[
-\prod_{\ell=0}^{k} r_{i_\ell,i_{\ell+1}} > 1
-\]
+
+`∏(ℓ = 0..k) r(iℓ, iℓ+1) > 1`
 
 Taking logs:
-\[
-\log \left(\prod r_{i_\ell,i_{\ell+1}}\right)
- = \sum_{\ell=0}^{k} \log r_{i_\ell,i_{\ell+1}} > 0
-\]
 
-With \(w_{ij} = -\log(r_{ij})\), this is equivalent to:
-\[
-\sum_{\ell=0}^{k} w_{i_\ell,i_{\ell+1}} < 0
-\]
+`log( ∏(ℓ = 0..k) r(iℓ, iℓ+1) ) = ∑(ℓ = 0..k) log r(iℓ, iℓ+1) > 0`
+
+With `wij = -log(rij)`, this is equivalent to:
+
+`∑(ℓ = 0..k) w(iℓ, iℓ+1) < 0`
 
 So:
 
@@ -56,17 +50,17 @@ This is exactly what Bellman–Ford can detect.
    - Extract all entries of the form `"XXX-YYY": "rate"` using a simple parser/regex.
    - Build:
      - the set of currencies,  
-     - a map \((\text{from}, \text{to}) \mapsto \text{rate}\).
+     - a map `(from, to) -> rate`.
 
 2. **Build graph**
    - Index currencies as `0 .. n-1`.
    - Create:
-     - `rateMatrix(i)(j) = r_{ij}` for later profit simulation,
+     - `rateMatrix(i)(j) = rij` for later profit simulation,
      - a list of edges `Edge(u, v, w)` with `w = -log(rate)`.
 
 3. **Add a super-source**
-   - Add a virtual source vertex \(s = n\).
-   - Add edges \(s \to i\) of weight 0 for all currencies \(i\).
+   - Add a virtual source vertex `s = n`.
+   - Add edges `s -> i` of weight `0` for all currencies `i`.
    - This allows Bellman–Ford to reach every node, regardless of where the arbitrage cycle starts.
 
 4. **Bellman–Ford + negative cycle detection**
@@ -76,7 +70,7 @@ This is exactly what Bellman–Ford can detect.
      dist(other nodes) = +∞
      pred(·) = -1
      ```
-   - Relax all edges \(N = n + 1\) times:
+   - Relax all edges `N = n + 1` times:
      ```scala
      if (dist(u) + w < dist(v) - 1e-12) {
        dist(v) = dist(u) + w
@@ -85,10 +79,10 @@ This is exactly what Bellman–Ford can detect.
      }
      ```
    - The `1e-12` epsilon is used to avoid treating pure floating-point noise as a real improvement.
-   - If on the \(N\)-th pass at least one distance is still improved (`x != -1`), a **negative cycle** exists.
+   - If on the `N`-th pass at least one distance is still improved (`x != -1`), a **negative cycle** exists.
 
 5. **Cycle reconstruction**
-   - From the last updated vertex `x`, walk predecessors \(N\) times to ensure you are inside the cycle:
+   - From the last updated vertex `x`, walk predecessors `N` times to ensure you are inside the cycle:
      ```scala
      var y = x
      for (_ <- 0 until N) y = pred(y)
@@ -98,9 +92,9 @@ This is exactly what Bellman–Ford can detect.
 
 6. **Profit computation and output**
    - Given the cycle (list of currency indices), compute:
-     \[
-     \text{profitFactor} = \prod r_{i_\ell,i_{\ell+1}}
-     \]
+     ```text
+     profitFactor = ∏ over edges in cycle of rij
+     ```
    - Simulate starting with 100 units of the first currency:
      ```scala
      amount = 100
@@ -113,38 +107,30 @@ This is exactly what Bellman–Ford can detect.
 
 ### Complexity
 
-Let \(n\) be the number of currencies and \(m\) the number of edges.
+Let `n` be the number of currencies and `m` the number of edges.
 
 In this problem the graph is essentially **dense** (there is a rate for almost every ordered pair), so:
 
-- \(m \approx n^2\)
+- `m ≈ n²`
 
 Costs:
 
 1. **Parsing + graph construction**  
-   - One pass over all pairs:  
-     \[
-     O(m) = O(n^2)
-     \]
+   - One pass over all pairs: `O(m) = O(n²)`
 
 2. **Bellman–Ford with super-source**  
-   - Vertices: \(V = n + 1\)  
-   - Edges: \(E = m + n \approx n^2\)  
+   - Vertices: `V = n + 1`  
+   - Edges: `E = m + n ≈ n²`  
    - Complexity:
-     \[
-     O(V \cdot E) \approx O(n \cdot n^2) = O(n^3)
-     \]
+     `O(V * E) ≈ O(n * n²) = O(n³)`
 
 3. **Cycle reconstruction + profit computation**  
-   - Cycle length ≤ \(n\):  
-     \[
-     O(n)
-     \]
+   - Cycle length ≤ `n`: `O(n)`
 
 Overall:
 
-- **Time:** \(O(n^3)\) on a dense graph  
-- **Space:** \(O(n^2)\) for the rate matrix and edge list
+- **Time:** `O(n³)` on a dense graph  
+- **Space:** `O(n²)` for the rate matrix and edge list
 
 This is the standard optimal complexity class for detecting negative cycles in a general weighted graph and scales well for realistic numbers of currencies.
 
@@ -177,12 +163,12 @@ This design links platform usage (fees) to **continuous buy pressure** on BORG.
 ### Staking and Governance
 
 - Users can **stake/lock BORG** in the app to obtain **voting power** in SwissBorg’s governance (“Guardians” system).
-- Voting power is roughly proportional to the amount of BORG locked (e.g. 10 BORG = 1 vote).
+- Voting power is roughly proportional to the amount of BORG locked (for example, 10 BORG = 1 vote).
 - Active voters in governance rounds receive additional BORG rewards from a dedicated pool funded by buybacks.
 - This ties:
   - **Platform benefits** (lower fees, better yields),
   - **Governance influence**,
-  - **Rewards for participation**
+  - **Rewards for participation**  
   to long-term BORG holding.
 
 ### Tokenomics and Technical Aspects
