@@ -106,7 +106,6 @@ object ArbitrageApp {
     (currencies, rates)
   }
 
-  // ---------- Graph building ----------
 
   def buildGraph(
     currencies: Vector[String],
@@ -196,7 +195,7 @@ object ArbitrageApp {
       var k = 0
       while (k < allEdges.length) {
         val e = allEdges(k)
-        if (dist(e.u) + e.w < dist(e.v) - 1e-12) {
+        if (dist(e.u) + e.w < dist(e.v) - 1e-16) {
           dist(e.v) = dist(e.u) + e.w
           pred(e.v) = e.u
           x = e.v
@@ -207,9 +206,9 @@ object ArbitrageApp {
     }
 
     if (x == -1) {
-      None // pas de cycle négatif
+      None 
     } else {
-      // remonte dans les prédécesseurs pour "tomber" dans le cycle
+      
       var y = x
       var i = 0
       while (i < N) {
@@ -217,7 +216,7 @@ object ArbitrageApp {
         i += 1
       }
 
-      // reconstruction du cycle (sans do/while)
+      
       val buff  = scala.collection.mutable.ListBuffer[Int]()
       var cur   = y
       var first = true
@@ -233,7 +232,7 @@ object ArbitrageApp {
     }
   }
 
-  // ---------- Profit ----------
+
 
   def computeProfitFactor(
     cycle: List[Int],
@@ -295,7 +294,6 @@ object ArbitrageApp {
       if (parsed._1.nonEmpty && parsed._2.nonEmpty) parsed
       else {
         println("[info] Falling back to embedded example JSON from the statement.")
-        // parseRates(sampleJson)
       }
 
     val (edges, rateMatrix) = buildGraph(currencies, rates)
