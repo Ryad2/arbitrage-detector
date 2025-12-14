@@ -1,0 +1,20 @@
+{
+  "name": "scala-cli",
+  "argv": [
+    "/usr/local/bin/scala-cli",
+    "bsp",
+    "--json-options",
+    "/home/ryad/swissborg/.scala-build/ide-options-v2.json",
+    "--json-launcher-options",
+    "/home/ryad/swissborg/.scala-build/ide-launcher-options.json",
+    "--envs-file",
+    "/home/ryad/swissborg/.scala-build/ide-envs.json",
+    "/home/ryad/swissborg/main.sc"
+  ],
+  "version": "1.11.0",
+  "bspVersion": "2.1.1",
+  "languages": [
+    "scala",
+    "java"
+  ]
+}

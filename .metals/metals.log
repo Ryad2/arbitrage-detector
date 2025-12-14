@@ -1,0 +1,844 @@
+2025.12.14 16:21:58 INFO  Started: Metals version 1.6.4 in folders '\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg' for client Visual Studio Code 1.107.0.
+2025.12.14 16:22:00 ERROR org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "//wsl.localhost/Ubuntu-22.04/home/ryad/swissborg/.metals/metals.mv.db"
+IO Exception: "//wsl.localhost/Ubuntu-22.04/home/ryad/swissborg/.metals/metals.mv.db" [90028-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:168)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:62)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:260)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:260)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:213)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:463)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.mvstore.MVStoreException: Could not open file //wsl.localhost/Ubuntu-22.04/home/ryad/swissborg/.metals/metals.mv.db [2.4.240/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:126)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2164)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:62)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:260)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:260)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:213)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:463)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: Fonction incorrecte
+	at sun.nio.ch.FileDispatcherImpl.lock0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.lock(FileDispatcherImpl.java:100)
+	at sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1328)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:135)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2164)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:62)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:260)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:260)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:213)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:463)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:22:00 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory '\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg'.
+org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Fonctionnalité non supportée: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:568)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:277)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:37)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:73)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:260)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:260)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:213)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:463)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:22:00 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2025.12.14 16:22:01 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:03 INFO  Attempting to connect to the build server...
+2025.12.14 16:22:03 INFO  Running BSP server List(/usr/local/bin/scala-cli, bsp, --json-options, /home/ryad/swissborg/.scala-build/ide-options-v2.json, --json-launcher-options, /home/ryad/swissborg/.scala-build/ide-launcher-options.json, --envs-file, /home/ryad/swissborg/.scala-build/ide-envs.json, /home/ryad/swissborg/main.sc)
+2025.12.14 16:22:03 ERROR Running process '/usr/local/bin/scala-cli bsp --json-options /home/ryad/swissborg/.scala-build/ide-options-v2.json --json-launcher-options /home/ryad/swissborg/.scala-build/ide-launcher-options.json --envs-file /home/ryad/swissborg/.scala-build/ide-envs.json /home/ryad/swissborg/main.sc' failed
+java.io.IOException: Cannot run program "/usr/local/bin/scala-cli" (in directory "\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg"): CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.bsp.BspServers.newServer(BspServers.scala:156)
+	at scala.meta.internal.bsp.BspConnector.connect$1(BspConnector.scala:185)
+	at scala.meta.internal.bsp.BspConnector.connect(BspConnector.scala:260)
+	at scala.meta.internal.metals.ConnectionProvider$Connect$.$anonfun$createSession$7(ConnectionProvider.scala:586)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:505)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.bsp.BspServers.newServer(BspServers.scala:156)
+	at scala.meta.internal.bsp.BspConnector.connect$1(BspConnector.scala:185)
+	at scala.meta.internal.bsp.BspConnector.connect(BspConnector.scala:260)
+	at scala.meta.internal.metals.ConnectionProvider$Connect$.$anonfun$createSession$7(ConnectionProvider.scala:586)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:22:04 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\.metals\bsp.trace.json or C:\Users\tototo\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.12.14 16:22:21 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 4:22:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 7
+2025.12.14 16:22:21 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:39 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:39 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:42 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 4:22:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 18
+2025.12.14 16:22:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:22:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:23:04 ERROR Timeout waiting for 'build/initialize' response
+2025.12.14 16:23:04 WARN  Retrying connection to the build server scala-cli
+2025.12.14 16:23:04 INFO  Running BSP server List(/usr/local/bin/scala-cli, bsp, --json-options, /home/ryad/swissborg/.scala-build/ide-options-v2.json, --json-launcher-options, /home/ryad/swissborg/.scala-build/ide-launcher-options.json, --envs-file, /home/ryad/swissborg/.scala-build/ide-envs.json, /home/ryad/swissborg/main.sc)
+2025.12.14 16:23:04 ERROR Running process '/usr/local/bin/scala-cli bsp --json-options /home/ryad/swissborg/.scala-build/ide-options-v2.json --json-launcher-options /home/ryad/swissborg/.scala-build/ide-launcher-options.json --envs-file /home/ryad/swissborg/.scala-build/ide-envs.json /home/ryad/swissborg/main.sc' failed
+java.io.IOException: Cannot run program "/usr/local/bin/scala-cli" (in directory "\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg"): CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:505)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:23:04 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\.metals\bsp.trace.json or C:\Users\tototo\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.12.14 16:24:04 ERROR Timeout waiting for 'build/initialize' response
+2025.12.14 16:24:04 WARN  Retrying connection to the build server scala-cli
+2025.12.14 16:24:04 INFO  Running BSP server List(/usr/local/bin/scala-cli, bsp, --json-options, /home/ryad/swissborg/.scala-build/ide-options-v2.json, --json-launcher-options, /home/ryad/swissborg/.scala-build/ide-launcher-options.json, --envs-file, /home/ryad/swissborg/.scala-build/ide-envs.json, /home/ryad/swissborg/main.sc)
+2025.12.14 16:24:04 ERROR Running process '/usr/local/bin/scala-cli bsp --json-options /home/ryad/swissborg/.scala-build/ide-options-v2.json --json-launcher-options /home/ryad/swissborg/.scala-build/ide-launcher-options.json --envs-file /home/ryad/swissborg/.scala-build/ide-envs.json /home/ryad/swissborg/main.sc' failed
+java.io.IOException: Cannot run program "/usr/local/bin/scala-cli" (in directory "\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg"): CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:505)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:24:04 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\.metals\bsp.trace.json or C:\Users\tototo\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.12.14 16:25:04 ERROR Timeout waiting for 'build/initialize' response
+2025.12.14 16:25:04 WARN  Retrying connection to the build server scala-cli
+2025.12.14 16:25:04 INFO  Running BSP server List(/usr/local/bin/scala-cli, bsp, --json-options, /home/ryad/swissborg/.scala-build/ide-options-v2.json, --json-launcher-options, /home/ryad/swissborg/.scala-build/ide-launcher-options.json, --envs-file, /home/ryad/swissborg/.scala-build/ide-envs.json, /home/ryad/swissborg/main.sc)
+2025.12.14 16:25:04 ERROR Running process '/usr/local/bin/scala-cli bsp --json-options /home/ryad/swissborg/.scala-build/ide-options-v2.json --json-launcher-options /home/ryad/swissborg/.scala-build/ide-launcher-options.json --envs-file /home/ryad/swissborg/.scala-build/ide-envs.json /home/ryad/swissborg/main.sc' failed
+java.io.IOException: Cannot run program "/usr/local/bin/scala-cli" (in directory "\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg"): CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:505)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:25:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\.metals\bsp.trace.json or C:\Users\tototo\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.12.14 16:26:05 ERROR Timeout waiting for 'build/initialize' response
+2025.12.14 16:26:05 WARN  Retrying connection to the build server scala-cli
+2025.12.14 16:26:05 INFO  Running BSP server List(/usr/local/bin/scala-cli, bsp, --json-options, /home/ryad/swissborg/.scala-build/ide-options-v2.json, --json-launcher-options, /home/ryad/swissborg/.scala-build/ide-launcher-options.json, --envs-file, /home/ryad/swissborg/.scala-build/ide-envs.json, /home/ryad/swissborg/main.sc)
+2025.12.14 16:26:05 ERROR Running process '/usr/local/bin/scala-cli bsp --json-options /home/ryad/swissborg/.scala-build/ide-options-v2.json --json-launcher-options /home/ryad/swissborg/.scala-build/ide-launcher-options.json --envs-file /home/ryad/swissborg/.scala-build/ide-envs.json /home/ryad/swissborg/main.sc' failed
+java.io.IOException: Cannot run program "/usr/local/bin/scala-cli" (in directory "\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg"): CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:505)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:26:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\.metals\bsp.trace.json or C:\Users\tototo\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.12.14 16:27:05 ERROR Timeout waiting for 'build/initialize' response
+2025.12.14 16:27:05 WARN  Retrying connection to the build server scala-cli
+2025.12.14 16:27:05 INFO  Running BSP server List(/usr/local/bin/scala-cli, bsp, --json-options, /home/ryad/swissborg/.scala-build/ide-options-v2.json, --json-launcher-options, /home/ryad/swissborg/.scala-build/ide-launcher-options.json, --envs-file, /home/ryad/swissborg/.scala-build/ide-envs.json, /home/ryad/swissborg/main.sc)
+2025.12.14 16:27:05 ERROR Running process '/usr/local/bin/scala-cli bsp --json-options /home/ryad/swissborg/.scala-build/ide-options-v2.json --json-launcher-options /home/ryad/swissborg/.scala-build/ide-launcher-options.json --envs-file /home/ryad/swissborg/.scala-build/ide-envs.json /home/ryad/swissborg/main.sc' failed
+java.io.IOException: Cannot run program "/usr/local/bin/scala-cli" (in directory "\\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg"): CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=193, %1 n’est pas une application Win32 valide
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:505)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:118)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$8(BspServers.scala:161)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:631)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:700)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:717)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$17.applyOrElse(BuildServerConnection.scala:714)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:27:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\.metals\bsp.trace.json or C:\Users\tototo\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.12.14 16:27:51 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:27:51 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:27:53 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:28:05 ERROR Timeout waiting for 'build/initialize' response
+2025.12.14 16:28:05 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:787)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:658)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.12.14 16:28:05 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:28:08 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.11s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.28s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.31s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.31s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.48s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.49s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.51s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.52s
+2025.12.14 16:28:08 INFO  time: code lens generation in 3.53s
+2025.12.14 16:28:15 WARN  scala-cli >= 0.1.3 not found in PATH, fetching and starting a JVM-based Scala CLI
+2025.12.14 16:28:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:28:25 ERROR Multiply Scala CLI start calls. Failed for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg
+2025.12.14 16:28:25 INFO  Running List(C:\Users\tototo\AppData\Local\Coursier\cache\arc\https\github.com\adoptium\temurin17-binaries\releases\download\jdk-17.0.17%252B10\OpenJDK17U-jdk_x64_windows_hotspot_17.0.17_10.zip\jdk-17.0.17+10\bin\java.exe, -cp, C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\cli_3\1.9.1\cli_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\github\alexarchambault\case-app_3\2.1.0\case-app_3-2.1.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier-launcher_2.13\2.1.24\coursier-launcher_2.13-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier-proxy-setup\2.1.24\coursier-proxy-setup-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\publish\publish_3\0.4.3\publish_3-0.4.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\jimfs\jimfs\1.3.1\jimfs-1.3.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\jniutils\windows-jni-utils\0.3.3\windows-jni-utils-0.3.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\github\plokhotnyuk\jsoniter-scala\jsoniter-scala-core_3\2.13.5.2\jsoniter-scala-core_3-2.13.5.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\libsodiumjni\0.0.4\libsodiumjni-0.0.4.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\metaconfig-typesafe-config_3\0.16.0\metaconfig-typesafe-config_3-0.16.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\ai\kien\python-native-libs_3\0.2.4\python-native-libs_3-0.2.4.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-packager_3\0.2.0\scala-packager_3-0.2.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli-signing\cli_3\0.2.11\cli_3-0.2.11.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\slf4j\slf4j-nop\2.0.17\slf4j-nop-2.0.17.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\softwaremill\sttp\client3\core_3\3.11.0\core_3-3.11.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\ch\epfl\scala\scalafix-interfaces\0.14.3\scalafix-interfaces-0.14.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-library_3\3.3.6\scala3-library_3-3.3.6.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\build-module_3\1.9.1\build-module_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\config_3\1.9.1\config_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\scala3-graal_3\1.9.1\scala3-graal_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\specification-level_3\1.9.1\specification-level_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\sourcecode_3\0.4.3-M5\sourcecode_3-0.4.3-M5.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\github\alexarchambault\case-app-annotations_3\2.1.0\case-app-annotations_3-2.1.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\github\alexarchambault\case-app-util_3\2.1.0\case-app-util_3-2.1.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\alexarchambault\scala-cli\tmp\zip-input-stream\0.1.1\zip-input-stream-0.1.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.16\scala-library-2.13.16.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier-cache_2.13\2.1.24\coursier-cache_2.13-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier-core_2.13\2.1.24\coursier-core_2.13-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\guava\guava\33.4.8-jre\guava-33.4.8-jre.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna-platform\5.12.1\jna-platform-5.12.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\metaconfig-core_3\0.16.0\metaconfig-core_3-0.16.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\typesafe\config\1.4.3\config-1.4.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-collection-compat_3\2.13.0\scala-collection-compat_3-2.13.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\cloud\tools\jib-core\0.27.3\jib-core-0.27.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\os-lib_3\0.11.5\os-lib_3-0.11.5.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\bouncycastle\bcpg-jdk18on\1.81\bcpg-jdk18on-1.81.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\bouncycastle\bcutil-jdk18on\1.81\bcutil-jdk18on-1.81.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli-signing\shared_3\0.2.11\shared_3-0.2.11.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\softwaremill\sttp\model\core_3\1.7.11\core_3-1.7.11.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\softwaremill\sttp\shared\core_3\1.3.22\core_3-1.3.22.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\softwaremill\sttp\shared\ws_3\1.3.22\ws_3-1.3.22.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\interface\1.0.28\interface-1.0.28.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\ow2\asm\asm\9.8\asm-9.8.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\java-class-name\java-class-name_3\0.1.8\java-class-name_3-0.1.8.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\semanticdb-shared_2.13\4.13.9\semanticdb-shared_2.13-4.13.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-native\test-runner_3\0.5.8\test-runner_3-0.5.8.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\pprint_3\0.9.3\pprint_3-0.9.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-env-nodejs_2.13\1.4.0\scalajs-env-nodejs_2.13-1.4.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-sbt-test-adapter_2.13\1.20.1\scalajs-sbt-test-adapter_2.13-1.20.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\swoval\file-tree-views\2.1.12\file-tree-views-2.1.12.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\zip-input-stream\zip-input-stream\0.1.3\zip-input-stream-0.1.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\options_3\1.9.1\options_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\directives_3\1.9.1\directives_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\scala-cli-bsp\1.9.1\scala-cli-bsp-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\test-runner_3\1.9.1\test-runner_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\tasty-lib_3\1.9.1\tasty-lib_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\alexarchambault\is-terminal\0.1.1\is-terminal-0.1.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-archiver\4.10.0\plexus-archiver-4.10.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-container-default\2.1.1\plexus-container-default-2.1.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\alexarchambault\windows-ansi\windows-ansi\0.0.6\windows-ansi-0.0.6.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\cache-util\2.1.24\cache-util-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier-util_2.13\2.1.24\coursier-util_2.13-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\alexarchambault\concurrent-reference-hash-map\1.1.0\concurrent-reference-hash-map-1.1.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-xml_2.13\2.3.0\scala-xml_2.13-2.3.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\errorprone\error_prone_annotations\2.36.0\error_prone_annotations-2.36.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\metaconfig-pprint_3\0.16.0\metaconfig-pprint_3-0.16.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\typelevel\paiges-core_3\0.4.4\paiges-core_3-0.4.4.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.16\scala-reflect-2.13.16.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\cloud\tools\jib-build-plan\0.4.0\jib-build-plan-0.4.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\http-client\google-http-client\1.42.2\google-http-client-1.42.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\http-client\google-http-client-apache-v2\1.42.2\google-http-client-apache-v2-1.42.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\auth\google-auth-library-oauth2-http\1.10.0\google-auth-library-oauth2-http-1.10.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\apache\commons\commons-compress\1.26.2\commons-compress-1.26.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\geny_3\1.1.1\geny_3-1.1.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\os-zip\0.11.5\os-zip-0.11.5.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\bouncycastle\bcprov-jdk18on\1.81\bcprov-jdk18on-1.81.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\jline\jline-terminal-jni\3.25.0\jline-terminal-jni-3.25.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\jline\jline-native\3.25.0\jline-native-3.25.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-compiler_3\3.3.6\scala3-compiler_3-3.3.6.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\scalameta_2.13\4.13.9\scalameta_2.13-4.13.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scalap\2.13.13\scalap-2.13.13.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\thesamet\scalapb\scalapb-runtime_2.13\0.11.15\scalapb-runtime_2.13-0.11.15.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-native\tools_3\0.5.8\tools_3-0.5.8.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-sbt\test-interface\1.0\test-interface-1.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\github\sbt\junit-interface\0.13.3\junit-interface-0.13.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\fansi_3\0.5.1\fansi_3-0.5.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-js-envs_2.13\1.4.0\scalajs-js-envs_2.13-1.4.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\ch\epfl\scala\bloop-config_2.13\2.3.2\bloop-config_2.13-2.3.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\core_3\1.9.1\core_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\using_directives\1.1.4\using_directives-1.1.4.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\virtuslab\scala-cli\build-macros_3\1.9.1\build-macros_3-1.9.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\ch\epfl\scala\bsp4j\2.1.1\bsp4j-2.1.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-utils\4.0.1\plexus-utils-4.0.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-io\3.5.0\plexus-io-3.5.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\airlift\aircompressor\0.27\aircompressor-0.27.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\tukaani\xz\1.9\xz-1.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\github\luben\zstd-jni\1.5.6-3\zstd-jni-1.5.6-3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-classworlds\2.6.0\plexus-classworlds-2.6.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\apache\xbean\xbean-reflect\3.7\xbean-reflect-3.7.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\fusesource\jansi\jansi\2.4.1\jansi-2.4.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\apache\httpcomponents\httpcore\4.4.15\httpcore-4.4.15.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\opencensus\opencensus-api\0.31.1\opencensus-api-0.31.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\opencensus\opencensus-contrib-http-util\0.31.1\opencensus-contrib-http-util-0.31.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\auto\value\auto-value-annotations\1.9\auto-value-annotations-1.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\auth\google-auth-library-credentials\1.10.0\google-auth-library-credentials-1.10.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\http-client\google-http-client-gson\1.42.2\google-http-client-gson-1.42.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\commons-codec\commons-codec\1.18.0\commons-codec-1.18.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-interfaces\3.3.6\scala3-interfaces-3.3.6.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\tasty-core_3\3.3.6\tasty-core_3-3.3.6.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-asm\9.8.0-scala-1\scala-asm-9.8.0-scala-1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-sbt\compiler-interface\1.10.4\compiler-interface-1.10.4.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\parsers_2.13\4.13.9\parsers_2.13-4.13.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.13\scala-compiler-2.13.13.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\thesamet\scalapb\lenses_2.13\0.11.15\lenses_2.13-0.11.15.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\protobuf\protobuf-java\3.19.6\protobuf-java-3.19.6.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-native\nir_3\0.5.8\nir_3-0.5.8.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-native\util_3\0.5.8\util_3-0.5.8.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-logging_2.13\1.1.1\scalajs-logging_2.13-1.1.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\unroll-annotation_2.13\0.1.12\unroll-annotation_2.13-0.1.12.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\ch\epfl\scala\bloop-rifle_2.13\2.0.13\bloop-rifle_2.13-2.0.13.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier-jvm_2.13\2.1.24\coursier-jvm_2.13-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\dependency_3\0.3.2\dependency_3-0.3.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\eclipse\jgit\org.eclipse.jgit\7.3.0.202506031305-r\org.eclipse.jgit-7.3.0.202506031305-r.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-env-jsdom-nodejs_2.13\1.1.0\scalajs-env-jsdom-nodejs_2.13-1.1.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\eclipse\lsp4j\org.eclipse.lsp4j.generator\0.20.1\org.eclipse.lsp4j.generator-0.20.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\eclipse\lsp4j\org.eclipse.lsp4j.jsonrpc\0.20.1\org.eclipse.lsp4j.jsonrpc-0.20.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\grpc\grpc-context\1.27.2\grpc-context-1.27.2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-sbt\util-interface\1.10.4\util-interface-1.10.4.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\trees_2.13\4.13.9\trees_2.13-4.13.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\java-diff-utils\java-diff-utils\4.12\java-diff-utils-4.12.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\ch\epfl\scala\libdaemon_2.13\0.0.12\libdaemon_2.13-0.0.12.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\alexarchambault\scala-cli\snailgun\snailgun-core_2.13\0.4.1-sc2\snailgun-core_2.13-0.4.1-sc2.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier_2.13\2.1.24\coursier_2.13-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\get-coursier\coursier-env_2.13\2.1.24\coursier-env_2.13-2.1.24.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\com\googlecode\javaewah\JavaEWAH\1.2.3\JavaEWAH-1.2.3.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\eclipse\xtend\org.eclipse.xtend.lib\2.28.0\org.eclipse.xtend.lib-2.28.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\common_2.13\4.13.9\common_2.13-4.13.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalameta\io_2.13\4.13.9\io_2.13-4.13.9.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\eclipse\xtext\org.eclipse.xtext.xbase.lib\2.28.0\org.eclipse.xtext.xbase.lib-2.28.0.jar;C:\Users\tototo\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\eclipse\xtend\org.eclipse.xtend.lib.macro\2.28.0\org.eclipse.xtend.lib.macro-2.28.0.jar, scala.cli.ScalaCli, bsp, \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg)
+2025.12.14 16:28:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\.metals\bsp.trace.json or C:\Users\tototo\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.12.14 16:28:29 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+Exception in thread "pool-16-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:244)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.12.14 16:28:35 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\main.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:28:36 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 16:28:35 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 4:28:36 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 45
+2025.12.14 16:28:36 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:28:38 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-compiler_3\3.3.1\scala3-compiler_3-3.3.1.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-interfaces\3.3.1\scala3-interfaces-3.3.1.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-library_3\3.3.1\scala3-library_3-3.3.1.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\tasty-core_3\3.3.1\tasty-core_3-3.3.1.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-asm\9.5.0-scala-1\scala-asm-9.5.0-scala-1.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-sbt\compiler-interface\1.3.5\compiler-interface-1.3.5.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\jline\jline-reader\3.19.0\jline-reader-3.19.0.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\jline\jline-terminal\3.19.0\jline-terminal-3.19.0.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\jline\jline-terminal-jna\3.19.0\jline-terminal-jna-3.19.0.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\com\google\protobuf\protobuf-java\3.7.0\protobuf-java-3.7.0.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-sbt\util-interface\1.3.0\util-interface-1.3.0.jar doesn't exist!
+2025.12.14 16:28:47 INFO  Scala CLI: [E] Scala instance jar C:\home\ryad\.cache\coursier\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.3.1\jna-5.3.1.jar doesn't exist!
+2025.12.14 16:28:51 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/3.3.1/scala3-compiler_3-3.3.1.pom
+2025.12.14 16:28:51 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/3.3.1/scala3-compiler_3-3.3.1.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.1/scala3-library_3-3.3.1.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.3.5/compiler-interface-1.3.5.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-interfaces/3.3.1/scala3-interfaces-3.3.1.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.1/scala3-library_3-3.3.1.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-interfaces/3.3.1/scala3-interfaces-3.3.1.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.3.5/compiler-interface-1.3.5.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/tasty-core_3/3.3.1/tasty-core_3-3.3.1.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/tasty-core_3/3.3.1/tasty-core_3-3.3.1.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-sbt/util-interface/1.3.0/util-interface-1.3.0.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.7.0/protobuf-java-3.7.0.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.7.0/protobuf-java-3.7.0.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-sbt/util-interface/1.3.0/util-interface-1.3.0.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/google/protobuf/protobuf-parent/3.7.0/protobuf-parent-3.7.0.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/google/protobuf/protobuf-parent/3.7.0/protobuf-parent-3.7.0.pom
+2025.12.14 16:28:52 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/google/protobuf/protobuf-bom/3.7.0/protobuf-bom-3.7.0.pom
+2025.12.14 16:28:53 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/google/protobuf/protobuf-bom/3.7.0/protobuf-bom-3.7.0.pom
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-interfaces/3.3.1/scala3-interfaces-3.3.1.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-sbt/util-interface/1.3.0/util-interface-1.3.0.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/tasty-core_3/3.3.1/tasty-core_3-3.3.1.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.1/scala3-library_3-3.3.1.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/tasty-core_3/3.3.1/tasty-core_3-3.3.1.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-interfaces/3.3.1/scala3-interfaces-3.3.1.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/3.3.1/scala3-compiler_3-3.3.1.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.3.5/compiler-interface-1.3.5.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-sbt/util-interface/1.3.0/util-interface-1.3.0.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.7.0/protobuf-java-3.7.0.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.3.5/compiler-interface-1.3.5.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.1/scala3-library_3-3.3.1.jar
+2025.12.14 16:28:53 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.7.0/protobuf-java-3.7.0.jar
+2025.12.14 16:28:56 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar
+2025.12.14 16:28:56 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/3.3.1/scala3-compiler_3-3.3.1.jar
+2025.12.14 16:28:56 INFO  Scala CLI: Downloading https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.pom
+2025.12.14 16:28:56 INFO  Scala CLI: Downloaded https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.pom
+2025.12.14 16:28:56 INFO  Scala CLI: Downloading https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.pom.sha1
+2025.12.14 16:28:57 INFO  Scala CLI: Downloaded https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.pom.sha1
+2025.12.14 16:28:57 INFO  Scala CLI: Downloading https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.jar
+2025.12.14 16:28:57 INFO  Scala CLI: Downloaded https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.jar
+2025.12.14 16:28:57 INFO  Scala CLI: Downloading https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.jar.sha1
+2025.12.14 16:28:57 INFO  Scala CLI: Downloaded https://repo.scala-lang.org/artifactory/maven-nightlies/org/scala-lang/scala3-sbt-bridge/3.3.1/scala3-sbt-bridge-3.3.1.jar.sha1
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/lihaoyi/ujson_3/4.4.1/ujson_3-4.4.1.pom
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/lihaoyi/ujson_3/4.4.1/ujson_3-4.4.1.pom
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/lihaoyi/upickle-core_3/4.4.1/upickle-core_3-4.4.1.pom
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/lihaoyi/upickle-core_3/4.4.1/upickle-core_3-4.4.1.pom
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/lihaoyi/upickle-core_3/4.4.1/upickle-core_3-4.4.1.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.1/scala3-library_3-3.3.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/lihaoyi/ujson_3/4.4.1/ujson_3-4.4.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/lihaoyi/upickle-core_3/4.4.1/upickle-core_3-4.4.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/lihaoyi/ujson_3/4.4.1/ujson_3-4.4.1.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/lihaoyi/upickle-core_3/4.4.1/upickle-core_3-4.4.1.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloading https://repo1.maven.org/maven2/com/lihaoyi/geny_3/1.1.1/geny_3-1.1.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/lihaoyi/ujson_3/4.4.1/ujson_3-4.4.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.1/scala3-library_3-3.3.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/lihaoyi/upickle-core_3/4.4.1/upickle-core_3-4.4.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/lihaoyi/geny_3/1.1.1/geny_3-1.1.1-sources.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/com/lihaoyi/ujson_3/4.4.1/ujson_3-4.4.1.jar
+2025.12.14 16:28:58 INFO  Scala CLI: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10-sources.jar
+2025.12.14 16:29:01 INFO  Connected to Scala CLI server v1.9.1
+2025.12.14 16:29:01 ERROR Empty build targets. Expected at least one build target identifier.
+2025.12.14 16:29:01 ERROR Empty build targets. Expected at least one build target identifier.
+2025.12.14 16:29:01 ERROR Empty build targets. Expected at least one build target identifier.
+2025.12.14 16:29:01 ERROR Empty build targets. Expected at least one build target identifier.
+2025.12.14 16:29:04 INFO  compiling swissborg_d5c0a6989e (2 scala sources)
+2025.12.14 16:29:08 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2025.12.14 16:29:10 INFO  time: indexed workspace in 8.45s
+2025.12.14 16:29:10 INFO  Scala CLI started for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg
+2025.12.14 16:29:10 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:29:10 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:48 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 16:34:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:34:49 INFO  time: code lens generation in 2.14s
+2025.12.14 16:34:57 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:35:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:35:58 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:42 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:43 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:43 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:43 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:53 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:53 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:54 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:54 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:54 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 16:36:55 INFO  time: code lens generation in 1.43s
+2025.12.14 16:36:57 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:36:57 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:01 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:01 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:01 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:02 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:02 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:02 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:02 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:02 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:04 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:08 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:09 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:09 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:10 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:09 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:11 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 16:39:11 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:39:12 INFO  time: code lens generation in 1.43s
+2025.12.14 16:39:13 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:32 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:32 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+déc. 14, 2025 4:44:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 125
+2025.12.14 16:44:32 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:33 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:33 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:33 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:35 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:37 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:44:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+Exception in thread "pool-52-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:244)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.12.14 16:44:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+Exception in thread "pool-55-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:244)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.12.14 16:46:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:25 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:25 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:25 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:28 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:28 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:29 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 16:46:31 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:06:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:06:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:09:54 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:09:54 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:09:54 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:37 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:37 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:42 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:44 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:44 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+Exception in thread "pool-67-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:244)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.12.14 17:18:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:48 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:49 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:50 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:50 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:18:50 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:50 INFO  time: code lens generation in 1.03s
+2025.12.14 17:18:52 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:52 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:56 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:56 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:56 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:56 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:57 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:57 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:58 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:58 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:18:58 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:00 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:01 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:01 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:19:02 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:15 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:17 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:17 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:17 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:17 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:19 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:19 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:20 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:20 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:23 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:19:25 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:24 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:25 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:25 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:25 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 5:19:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 257
+2025.12.14 17:19:26 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 5:19:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 258
+2025.12.14 17:19:26 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:26 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:26 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:26 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:26 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:26 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:27 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:27 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 5:19:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 268
+2025.12.14 17:19:28 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:27 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:27 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 5:19:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 274
+déc. 14, 2025 5:19:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 276
+2025.12.14 17:19:28 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:29 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:28 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:29 INFO  time: code lens generation in 1.17s
+déc. 14, 2025 5:19:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 275
+déc. 14, 2025 5:19:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 277
+déc. 14, 2025 5:19:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 281
+déc. 14, 2025 5:19:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 280
+déc. 14, 2025 5:19:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 283
+déc. 14, 2025 5:19:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 279
+2025.12.14 17:19:28 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:28 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 5:19:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 282
+déc. 14, 2025 5:19:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 284
+déc. 14, 2025 5:19:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 285
+2025.12.14 17:19:30 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:30 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:19:30 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:30 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:30 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:30 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:31 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:31 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:33 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:33 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:33 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:33 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:34 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:34 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:34 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:34 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:35 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:34 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:35 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:35 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:19:36 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:37 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:37 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:37 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:37 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+déc. 14, 2025 5:19:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 320
+déc. 14, 2025 5:19:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 322
+2025.12.14 17:19:39 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:39 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:39 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:39 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:39 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:19:40 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:40 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:40 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:40 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:41 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:41 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:41 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:42 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:43 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:43 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:44 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:44 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:43 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:43 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:45 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:19:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:45 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:46 WARN  no build target for: \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc
+2025.12.14 17:19:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:46 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:47 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:49 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:57 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:19:57 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:03 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:03 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:06 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:06 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:08 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:08 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:09 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:09 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.12.14 17:20:10 INFO  no build target found for \\wsl.localhost\Ubuntu-22.04\home\ryad\swissborg\mainTemplate.sc. Using presentation compiler with project's scala-library version: 3.3.6
